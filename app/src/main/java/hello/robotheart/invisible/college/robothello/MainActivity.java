@@ -1,5 +1,7 @@
 package hello.robotheart.invisible.college.robothello;
 
+import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,7 +10,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +46,37 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        RelativeLayout rl = (RelativeLayout) this.findViewById(R.id.relative_layout);
+        Context context = rl.getContext();
+
+        List<String> storyLines = Arrays.asList(
+                "A droid has information that will help freedom fighters. ",
+                "The droid, when it gives information, will explode on the person. ",
+                "The explosion will result in a great world of abundance: food, water, love, empathy."
+        );
+        int prevId = R.id.hello_view;
+
+        for (int i = 0; i < storyLines.size(); i++) {
+            final TextView story_view = new TextView(this);
+
+            int currId = prevId + 1;
+            story_view.setId(currId);
+            story_view.setText(storyLines.get(i));
+            story_view.setTextColor(Color.BLUE);
+
+            RelativeLayout.LayoutParams params1 =
+                    new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            params1.addRule(RelativeLayout.BELOW, prevId);
+            prevId = currId;
+            story_view.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    System.out.println("Clicked " + story_view.getText());
+                }
+            });
+            rl.addView(story_view, params1);
+        }
+
     }
 
     @Override
