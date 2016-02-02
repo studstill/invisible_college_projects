@@ -1,6 +1,7 @@
 package hello.robotheart.invisible.college.robothello;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,55 +28,71 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final TextView tv = (TextView) findViewById(R.id.hello_view);
+
+        final TextView helloView = (TextView) findViewById(R.id.hello_view);
         final String hello_string = getResources().getString(R.string.hello_string);
         final String goodbye_string = getResources().getString(R.string.goodbye_string);
-        tv.setText(hello_string);
+        helloView.setText(hello_string);
 
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tv.setText(goodbye_string);
-            }
-        });
+        final MainActivity mainActivity = this;
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(mainActivity, InputActivity.class);
+                startActivity(intent);
+
+                /*
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                */
             }
         });
 
         RelativeLayout rl = (RelativeLayout) this.findViewById(R.id.relative_layout);
         Context context = rl.getContext();
 
-        List<String> storyLines = Arrays.asList(
-                "A droid has information that will help freedom fighters. ",
-                "The droid, when it gives information, will explode on the person. ",
-                "The explosion will result in a great world of abundance: food, water, love, empathy."
+        final List<String> storyLines = Arrays.asList(
+                "Robot has information that will help some freedom fighters battle an evil army.",
+                "Robot meets orphan wants to escape desert planet.",
+                "The dark lord of the evil army wants to capture the droid and crush the freedom fighters.",
+                "A battle happens, involving a superweapon.",
+                "Freedom fighters win."
         );
+
         int prevId = R.id.hello_view;
+
+        List<TextView> tvs = new ArrayList<>();
 
         for (int i = 0; i < storyLines.size(); i++) {
             final TextView story_view = new TextView(this);
 
             int currId = prevId + 1;
             story_view.setId(currId);
-            story_view.setText(storyLines.get(i));
+            //story_view.setText(storyLines.get(i));
             story_view.setTextColor(Color.BLUE);
 
             RelativeLayout.LayoutParams params1 =
                     new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             params1.addRule(RelativeLayout.BELOW, prevId);
             prevId = currId;
-            story_view.setOnClickListener(new View.OnClickListener() {
+            rl.addView(story_view, params1);
+            tvs.add(story_view);
+        }
+
+        tvs.get(0).setText(storyLines.get(0));
+
+        for (int i = 0; i < tvs.size() - 1; i++) {
+            TextView current_view = tvs.get(i);
+            final TextView next_view = tvs.get(i+1);
+            final String nextStoryLine = storyLines.get(i+1);
+            current_view.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    System.out.println("Clicked " + story_view.getText());
+                   next_view.setText(nextStoryLine);
                 }
             });
-            rl.addView(story_view, params1);
+
         }
 
     }
