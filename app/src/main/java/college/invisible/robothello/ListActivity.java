@@ -1,4 +1,4 @@
-package hello.robotheart.invisible.college.robothello;
+package college.invisible.robothello;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
