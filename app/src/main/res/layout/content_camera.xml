@@ -9,20 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="hello.robotheart.invisible.college.robothello.MainActivity"
-    tools:showIn="@layout/activity_main"
-    android:id="@+id/relative_layout">
+    tools:context="college.invisible.robothello.CameraActivity"
+    tools:showIn="@layout/activity_camera">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/hello_view" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/image_view"
-        android:layout_below="@+id/hello_view"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp" />
 </RelativeLayout>

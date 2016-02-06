@@ -17,14 +17,13 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-    static ImageView mImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +32,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         final TextView helloView = (TextView) findViewById(R.id.hello_view);
         final String hello_string = getResources().getString(R.string.hello_string);
         final String goodbye_string = getResources().getString(R.string.goodbye_string);
         helloView.setText(hello_string);
 
         final MainActivity mainActivity = this;
+
+        ImageView imageView = (ImageView) findViewById(R.id.image_view);
+        Picasso.with(this).load("http://i.imgur.com/DvpvklR.png").into(imageView);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -101,16 +102,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            mImageView.setImageBitmap(imageBitmap);
-        }
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
