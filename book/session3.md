@@ -108,6 +108,34 @@ In your layout file `activity_list.xml`, make sure it looks like the following:
 </RelativeLayout>
 ```
 
+In the file `list_basic_item.xml` type the following:
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/textViewSample"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:padding="30dp"
+        android:fontFamily="sans-serif-light"
+        tools:text="Sample text"
+        />
+
+</LinearLayout>
+```
+
 In the file `ListActivity.java`, in the `onCreate` method:
 
 ```
@@ -131,10 +159,6 @@ In the file `ListActivity.java`, in the `onCreate` method:
         // RecyclerView layout manager
         final LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(mLayoutManager);
-
-        // RecyclerView ItemDecoration (divider)
-        final RecyclerView.ItemDecoration itemDecoration = new SampleDivider(this);
-        recyclerView.addItemDecoration(itemDecoration);
 
         // RecyclerView adapter
         final SampleRecyclerAdapter sampleRecyclerAdapter = new SampleRecyclerAdapter(recyclerView);
