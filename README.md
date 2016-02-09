@@ -35,12 +35,7 @@ We'll learn how to capture images and sounds using your mobile device's built-in
 
 Wednesday, February 5th, 7-8pm PST
 
-<<<<<<< HEAD
 [Session 2A Screenrecording](https://youtu.be/26qvGlwFl9U)
-[Come to this hangout link!](https://hangouts.google.com/call/4hjlkgsyzhlmkfzphncs26tlmya)
-=======
-[Session 3 Screenrecording](https://youtu.be/26qvGlwFl9U)
->>>>>>> bfeb8e6bad4cdda96bef12893135e99c67ed166f
 
 We'll learn how to load images over the internet by URL. We'll capture sounds using your mobile device's built-in microphone.
 
@@ -48,21 +43,21 @@ We'll learn how to load images over the internet by URL. We'll capture sounds us
 
 Monday, February 8th, 6-8pm PST
 
-[Join us at this hangout link](https://hangouts.google.com/call/pb4p3pf4p5r2ho2rfe2tjtbpzea)
+[Session 3 Screenrecording](http://youtu.be/EdaO63rSmO0)
 
 We'll learn how to add a list view to our story-board app, so we can view multiple options in a vertical list that can scroll up and down. This is useful for a list of products to choose from or any list of options.
 
 ## Session 4
 
-Wednesday, February 10th, 6-8pm PST
+Wednesday, February 10th, 6-8pm PST, 9-11pm EST
 
-[Google Hangout-on-Air](https://plus.google.com/events/c50o5mmjpljhfv8f231glm5tkqc)
+[Join us at this hangout!](https://hangouts.google.com/call/ywdsp4wem6dkzhrxqh3xj4v4jaa)
 
 We'll add support for Parse, an online web app platform that will let us store data on the cloud, and also get dynamic new data from the cloud.
 
 ## Session 5
 
-Monday, February 15th, 6-8pm PST
+Monday, February 15th, 6-8pm PST, 9-11pm EST
 
 [Google Hangout-on-Air](https://plus.google.com/events/cdfm6n7tl8fv7rnmhbm7kfba818)
 
@@ -70,7 +65,7 @@ We'll learn how to create a simple map view using the Google Maps API to capture
 
 ## Session 6
 
-Wednesday, February 17th, 6-8pm PST
+Wednesday, February 17th, 6-8pm PST, 9-11pm EST
 
 [Google Hangout-on-Air](https://plus.google.com/events/c634o8lua297u9fgmdkv0tng3q8)
 
@@ -78,7 +73,7 @@ We'll learn how to use the new MapBox API, an alternative to Google Maps that us
 
 ## Session 7
 
-Monday, February 22nd, 6-8pm PST
+Monday, February 22nd, 6-8pm PST, 9-11pm EST
 
 [Google Hangout-on-Air](https://plus.google.com/events/c6if79uhoho5kg4gg0hlch2v43k)
 
@@ -86,7 +81,7 @@ We'll learn how to create custom views to create new controls and interactions b
 
 ## Session 8
 
-Wednesday, February 24th, 6-8pm PST
+Wednesday, February 24th, 6-8pm PST, 9-11pm EST
 
 [Google Hangout-on-Air](https://plus.google.com/events/crr30i7qosao8fg04h17vabidd0)
 
