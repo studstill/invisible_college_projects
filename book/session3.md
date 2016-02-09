@@ -136,6 +136,89 @@ In the file `list_basic_item.xml` type the following:
 </LinearLayout>
 ```
 
+Create a new class `SampleRecyclerAdapter.java` and add this to it:
+
+```
+public class SampleRecyclerAdapter extends RecyclerView.Adapter<SampleRecyclerAdapter.ViewHolder>
+        implements RecyclerView.OnClickListener {
+
+    private final ArrayList<SampleModel> sampleData = DemoApp.getSampleData(20);
+
+    public SampleRecyclerAdapter(RecyclerView rv) {
+        rv.setAdapter(this);
+        rv.setOnClickListener(this);
+    }
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parentViewGroup, int i) {
+
+        View rowView = LayoutInflater.from (parentViewGroup.getContext())
+            .inflate(R.layout.list_basic_item, parentViewGroup, false);
+
+        return new ViewHolder (rowView);
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+
+        final SampleModel rowData = sampleData.get(position);
+        viewHolder.textViewSample.setText(rowData.getQuestion());
+
+        viewHolder.itemView.setTag(rowData);
+    }
+
+
+    @Override
+    public int getItemCount() {
+
+        return sampleData.size();
+    }
+
+    public void removeData (int position) {
+
+        sampleData.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void addItem(int positionToAdd) {
+        int nextSize = sampleData.size() + 1;
+        SampleModel sampleModel = new SampleModel();
+        sampleModel.setQuestion("" + nextSize);
+        sampleModel.setAnswer("" + nextSize);
+        sampleData.add(positionToAdd, sampleModel);
+        notifyItemInserted(positionToAdd);
+    }
+
+    @Override
+    public void onClick(View v) {
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder implements
+            View.OnClickListener {
+
+        private final TextView textViewSample;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+
+            textViewSample = (TextView) itemView.findViewById(
+                R.id.textViewSample);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            // v is the LinearLayout, it turns out, the parent.
+            int position = this.getLayoutPosition();
+            SampleModel data = (SampleModel) this.itemView.getTag();
+            data.toggleSide();
+            textViewSample.setText(data.getVisibleString());
+            //Log.d("Tag1", "At position + " + Integer.toString(position) + " " + v.toString());
+        }
+    }
+
+}
+```
 In the file `ListActivity.java`, in the `onCreate` method:
 
 ```
