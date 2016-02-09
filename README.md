@@ -35,6 +35,7 @@ We'll learn how to capture images and sounds using your mobile device's built-in
 
 Wednesday, February 5th, 7-8pm PST
 
+[Session 2A Screenrecording](https://youtu.be/26qvGlwFl9U)
 [Come to this hangout link!](https://hangouts.google.com/call/4hjlkgsyzhlmkfzphncs26tlmya)
 
 We'll learn how to load images over the internet by URL. We'll capture sounds using your mobile device's built-in microphone.

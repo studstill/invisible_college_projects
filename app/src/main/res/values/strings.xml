@@ -5,4 +5,5 @@
     <string name="goodbye_string">Auf wiedersehen!</string>
     <string name="title_activity_camera">CameraActivity</string>
     <string name="title_activity_sound">SoundActivity</string>
+    <string name="title_activity_list">ListActivity</string>
 </resources>

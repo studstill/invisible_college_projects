@@ -33,6 +33,22 @@ creation.
 
 ![Commit history](images/github-commits.png)
 
+You can view individual commits by clicking
+on the hash number (the 7 seemingly random hexadecimal
+characters) that uniquely identify each commit.
+When you view a commit, you can tell exactly which
+files are changed, and which lines within those files.
+
+Green means the lines were added.
+Red means the lines were removed.
+
+This is known as a *diff*, or a difference, in source
+code. All commits are just diffs and can be represented
+as lines added and removed.
+
+Now you'll know exactly which lines change in every
+session, and by watching the screenrecording or taking
+notes, you'll know why! (knowing == half the battle)
 
 # Including Picasso, a 3rd-party library
 
