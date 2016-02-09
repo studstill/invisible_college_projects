@@ -35,8 +35,12 @@ We'll learn how to capture images and sounds using your mobile device's built-in
 
 Wednesday, February 5th, 7-8pm PST
 
+<<<<<<< HEAD
 [Session 2A Screenrecording](https://youtu.be/26qvGlwFl9U)
 [Come to this hangout link!](https://hangouts.google.com/call/4hjlkgsyzhlmkfzphncs26tlmya)
+=======
+[Session 3 Screenrecording](https://youtu.be/26qvGlwFl9U)
+>>>>>>> bfeb8e6bad4cdda96bef12893135e99c67ed166f
 
 We'll learn how to load images over the internet by URL. We'll capture sounds using your mobile device's built-in microphone.
 
@@ -44,7 +48,7 @@ We'll learn how to load images over the internet by URL. We'll capture sounds us
 
 Monday, February 8th, 6-8pm PST
 
-[Google Hangout-on-Air](https://plus.google.com/events/cvbnboa23pag84eb8mg00ng511g)
+[Join us at this hangout link](https://hangouts.google.com/call/pb4p3pf4p5r2ho2rfe2tjtbpzea)
 
 We'll learn how to add a list view to our story-board app, so we can view multiple options in a vertical list that can scroll up and down. This is useful for a list of products to choose from or any list of options.
 
