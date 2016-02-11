@@ -11,6 +11,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+
+import java.util.List;
+
 import college.invisible.robothello.R;
 
 public class ListActivity extends AppCompatActivity {
@@ -54,6 +60,23 @@ public class ListActivity extends AppCompatActivity {
 
                 int positionToAdd = mLayoutManager.findFirstCompletelyVisibleItemPosition();
                 sampleRecyclerAdapter.addItem(positionToAdd);
+            }
+        });
+
+        ParseQuery<SampleModel> query = new ParseQuery<>(SampleModel.class);
+        query.include(SampleModel.class.getSimpleName());
+
+        query.findInBackground(new FindCallback<SampleModel>() {
+            @Override
+            public void done(List<SampleModel> flashCards, ParseException e) {
+                if (e != null) {
+                    e.printStackTrace();
+                    return;
+                }
+                SampleModel[] array = new SampleModel[flashCards.size()];
+                flashCards.toArray(array); // fill the array
+
+                sampleRecyclerAdapter.addItems(flashCards);
             }
         });
 /*

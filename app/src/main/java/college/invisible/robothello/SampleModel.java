@@ -1,38 +1,47 @@
 package college.invisible.robothello;
 
+import com.parse.ParseClassName;
+import com.parse.ParseObject;
+
 /**
  * Created by ppham on 2/8/16.
  */
-public class SampleModel {
-    private String mQuestion;
-    private String mAnswer;
+
+@ParseClassName("FlashCard")
+public class SampleModel extends ParseObject {
+    public static final String DATA_QUESTION = "question";
+    public static final String DATA_ANSWER = "answer";
 
     public enum Side {QUESTION, ANSWER};
 
     private Side mSide;
 
+    /* new SampleModel() */
     public SampleModel() {
-        this.mQuestion = "new question";
-        this.mAnswer = "new answer";
-        this.mSide  = Side.QUESTION;
-
+        this.mSide = Side.QUESTION;
     }
 
+    /* new SampleModel("question", "answer") */
+    public SampleModel(String question, String answer) {
+        this.mSide  = Side.QUESTION;
+        setQuestion(question);
+        setAnswer(answer);
+    }
 
     public void setQuestion(String question) {
-        this.mQuestion = question;
+        put(DATA_QUESTION, question);
     }
 
     public void setAnswer(String answer) {
-        this.mAnswer = answer;
+        put(DATA_ANSWER, answer);
     }
 
     public String getQuestion() {
-        return this.mQuestion;
+        return getString(DATA_QUESTION);
     }
 
     public String getAnswer() {
-        return this.mAnswer;
+        return getString(DATA_ANSWER);
     }
 
     public boolean isQuestion() {
@@ -41,9 +50,9 @@ public class SampleModel {
 
     public String getVisibleString() {
         if (this.mSide == Side.QUESTION) {
-            return this.mQuestion;
+            return getQuestion();
         } else {
-            return this.mAnswer;
+            return getAnswer();
         }
     }
 

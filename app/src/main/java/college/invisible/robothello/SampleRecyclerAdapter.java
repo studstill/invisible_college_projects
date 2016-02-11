@@ -6,17 +6,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.parse.ParseObject;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by ppham on 2/8/16.
  */
 public class SampleRecyclerAdapter extends RecyclerView.Adapter<SampleRecyclerAdapter.ViewHolder>
         implements RecyclerView.OnClickListener {
-
-    private final ArrayList<SampleModel> sampleData = new ArrayList<>();
+    private final List<SampleModel> sampleData = new ArrayList<>();
 
     public SampleRecyclerAdapter(RecyclerView rv) {
+        sampleData.add(new SampleModel("What do you call an alligator in a trenchcoat?", "An invesitgator"));
+        sampleData.add(new SampleModel("What do you call a kitten on a hill?", "A meowtain!"));
+
+
+
         rv.setAdapter(this);
         rv.setOnClickListener(this);
     }
@@ -53,15 +61,17 @@ public class SampleRecyclerAdapter extends RecyclerView.Adapter<SampleRecyclerAd
         if (positionToAdd == -1) {
             positionToAdd = 0;
         }
-        int nextSize = sampleData.size() + 1;
-        SampleModel sampleModel = new SampleModel();
-        sampleModel.setQuestion("" + nextSize);
-        sampleModel.setAnswer("" + nextSize);
+        SampleModel sampleModel = new SampleModel("What is the meaning of life, the universe, and everything?", "42");
+        sampleModel.saveInBackground();
         sampleData.add(positionToAdd, sampleModel);
         notifyItemInserted(positionToAdd);
+
     }
 
-
+    public void addItems(List<SampleModel> items) {
+        sampleData.addAll(items);
+        notifyDataSetChanged();
+    }
 
 
     @Override
