@@ -35,6 +35,27 @@ paradigm that you may be familiar with from web frameworks.
 From last time, we will need to create `SampleModel` objects (our flash cards) and
 add them to the list of our adapter.
 
+In the file SampleRecyclerAdapter.java, change the lines at the beginning of the file to say:
+
+```
+    private final List<SampleModel> sampleData = new ArrayList<SampleModel>();
+
+    public SampleRecyclerAdapter(RecyclerView rv) {
+
+        sampleData.add(
+                new SampleModel("What do you call an alligator in a trench coat?","An investigator")
+        );
+
+        sampleData.add(
+                new SampleModel("What do you call a kitten on a hill?","A meowntain.")
+        );
+
+
+        rv.setAdapter(this);
+        rv.setOnClickListener(this);
+    }
+```
+
 ## Create a Parse App
 
 Note: Parse is shutting down its hosted service in January 2017 (less than a year from now).
