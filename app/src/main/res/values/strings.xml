@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RobotHello</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_string">Hola mundo!</string>
+    <string name="goodbye_string">Auf wiedersehen!</string>
+    <string name="title_activity_camera">CameraActivity</string>
+    <string name="title_activity_sound">SoundActivity</string>
+    <string name="title_activity_list">ListActivity</string>
+</resources>
